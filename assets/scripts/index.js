@@ -20,23 +20,7 @@ $(() => {
   authEvents.addHandlers()
 })
 
-// $( "#square_0_2" ).click(function() {
-//   alert( "Handler for .click() called." );
-// });
-
-// $('img').on({
-//   'click': function () {
-//     $('img').attr('src', 'assets/styles/images/ohs.png')
-//   }
-// })
-//
-// $('document').on({
-//   'click': function () {
-//     $(this).children('img').attr('src', 'assets/styles/images/ohs.png')
-//   }
-// })
-// $('document').on({
-//   'click': function () {
-//     console.log($(this).children('img').attr('src')
-//   }
+// Changes image (moved to engine.js)
+// $("#playarea").on("click", "img", function() {
+//   $(this).attr('src', 'assets/styles/images/ohs.png')
 // })
