@@ -11,7 +11,24 @@ body {
 
 }
 #playarea {
+  display: none;
   margin: 100px auto;
 	background-color: #222222;
 	padding: 0px;
+}
+
+#change-password {
+  display: none;
+}
+
+#sign-out {
+  display: none;
+}
+
+#sign-up {
+  display: none;
+}
+
+#sign-in {
+  display: none;
 }

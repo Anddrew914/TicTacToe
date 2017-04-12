@@ -2,6 +2,7 @@
 const store = require('../store.js')
 const signUpSuccess = (data) => {
   console.log(data)
+  $('#sign-up').hide()
 }
 
 const signUpFailure = (error) => {
@@ -11,6 +12,10 @@ const signUpFailure = (error) => {
 const signInSuccess = (data) => {
   console.log(data)
   store.user = data.user
+  $('#playarea').toggle()
+  $('#sign-in').hide()
+  $('#sign-up').hide()
+  $('#sign-out').show()
 }
 
 const signInFailure = (error) => {
@@ -26,7 +31,11 @@ const changePasswordFailure = (error) => {
 }
 
 const signOutSuccess = (data) => {
-  console.log('data is', data)
+  console.log('data is sign', data)
+  $('#playarea').hide()
+  $('#sign-in').show()
+  $('#sign-up').show()
+  $('#sign-out').hide()
 }
 
 const signOutFailure = (error) => {

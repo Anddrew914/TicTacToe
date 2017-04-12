@@ -37,8 +37,8 @@ const onSignOut = function (event) {
   const data = getFormFields(event.target)
 
   api.signOut(data)
-    .then(ui.logOutSuccess)
-    .catch(ui.logOutFailure)
+    .then(ui.signOutSuccess)
+    .catch(ui.signOutFailure)
 }
 
 const addHandlers = () => {

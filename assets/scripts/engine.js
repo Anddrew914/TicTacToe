@@ -66,3 +66,13 @@ $('#playarea').on('click', 'img', function (evt) {
     return owinner()
   }
 })
+
+$('.btn-group').on('click', '.signUp', function (evt) {
+  $('#sign-up').toggle()
+})
+$('.btn-group').on('click', '.signIn', function (evt) {
+  $('#sign-in').toggle()
+})
+// $('.btn-group').on('click', '.signIn', function (evt) {
+//   $('#sign-in').toggle()
+// })
