@@ -53,11 +53,18 @@ const createGameFailure = () => {
   console.log('create game failure')
 }
 
-const updateSuccess = (data) => {
+const updateSuccess = (data) =>{
   console.log('update data success' + data)
 }
 
 const updateFailure = (data) => {
+  console.log('update data failure' + data)
+}
+
+const getGamesSuccess = (data) => {
+  console.log('update data success' + data)
+}
+const getGamesFailure = (data) => {
   console.log('update data failure' + data)
 }
 
@@ -73,5 +80,7 @@ module.exports = {
   updateSuccess,
   updateFailure,
   createGameSuccess,
-  createGameFailure
+  createGameFailure,
+  getGamesSuccess,
+  getGamesFailure
 }
