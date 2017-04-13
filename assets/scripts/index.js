@@ -20,8 +20,3 @@ $(() => {
   authEvents.addHandlers()
   engine.addHandlers()
 })
-
-// Changes image (moved to engine.js)
-// $("#playarea").on("click", "img", function() {
-//   $(this).attr('src', 'assets/styles/images/ohs.png')
-// })

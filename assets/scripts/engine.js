@@ -1,5 +1,5 @@
-const api = require('./api')
-const ui = require('./ui')
+const api = require('./auth/api')
+const ui = require('./auth/ui')
 // const board = [0, 1, 2, 3, 4, 5, 6, 7, 8]
 const winning = [[0, 1, 2], [3, 4, 5], [6, 7, 8],
                  [0, 3, 6], [1, 4, 7], [2, 5, 8],
@@ -7,15 +7,15 @@ const winning = [[0, 1, 2], [3, 4, 5], [6, 7, 8],
 
 const xArray = []
 const oArray = []
-let open = true
-let currentplayer = 'x'
+let over = false
+let currentplayer = 'X'
 
 const xwinner = function () {
   $.each(winning, function (index, value) {
     if (xArray.includes(value[0]) &&
       xArray.includes(value[1]) &&
       xArray.includes(value[2])) {
-      open = false
+      over = true
       console.log('winner!')
     }
   })
@@ -26,7 +26,7 @@ const owinner = function () {
     if (oArray.includes(value[0]) &&
       oArray.includes(value[1]) &&
       oArray.includes(value[2])) {
-      open = false
+      over = true
       console.log('winner!')
     }
   })
@@ -39,10 +39,9 @@ const clickcheck = function () {
   }
 }
 
-
 // Click controller
 const gamePlay = function () {
-  if (open === false) {
+  if (over === true) {
     console.log("Game's over!")
     return
   }
@@ -51,21 +50,29 @@ const gamePlay = function () {
     return
   }
   const idnumber = $(this).data('id')
-  if (currentplayer === 'x') {
+  if (currentplayer === 'X') {
     $(this).attr('src', 'assets/styles/images/exes1.png')
     xArray.push(idnumber)
-    currentplayer = 'o'
+    currentplayer = 'O'
     xwinner()
   } else {
     $(this).attr('src', 'assets/styles/images/ohs1.png')
     oArray.push(idnumber)
-    currentplayer = 'x'
+    currentplayer = 'X'
     owinner()
   }
-
-  api.signUp(data)
-    .then(ui.signUpSuccess)
-    .catch(ui.signUpFailure)
+  const gameData = {
+    'game': {
+      'cell': {
+        'index': idnumber,
+        'value': currentplayer
+      },
+      'over': over
+    }
+  }
+  api.update(gameData)
+    .then(ui.updateSuccess)
+    .catch(ui.updateFailure)
 }
 
 $('.btn-group').on('click', '.signUp', function (evt) {
