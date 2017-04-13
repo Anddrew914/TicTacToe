@@ -5,7 +5,7 @@ const winning = [[0, 1, 2], [3, 4, 5], [6, 7, 8],
 
 const xArray = []
 const oArray = []
-let gameState = open
+let open = true
 let currentplayer = 'x'
 
 const xwinner = function () {
@@ -13,7 +13,7 @@ const xwinner = function () {
     if (xArray.includes(value[0]) &&
       xArray.includes(value[1]) &&
       xArray.includes(value[2])) {
-      gameState = 'over'
+      open = false
       console.log('winner!')
     }
   })
@@ -24,7 +24,7 @@ const owinner = function () {
     if (oArray.includes(value[0]) &&
       oArray.includes(value[1]) &&
       oArray.includes(value[2])) {
-      gameState = 'over'
+      open = false
       console.log('winner!')
     }
   })
@@ -37,15 +37,9 @@ const clickcheck = function () {
   }
 }
 
-const statecheck = function () {
-  if (gameState === 'over') {
-    return true
-  }
-}
-
 // Click controller
 const gamePlay = function () {
-  if (statecheck() === true) {
+  if (open === false) {
     console.log("Game's over!")
     return
   }

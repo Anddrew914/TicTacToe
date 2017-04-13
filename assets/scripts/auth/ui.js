@@ -54,11 +54,11 @@ const createGameFailure = () => {
 }
 
 const updateSuccess = (data) => {
-  console.log('update data' + data)
+  console.log('update data success' + data)
 }
 
 const updateFailure = (data) => {
-  console.log('update data' + data)
+  console.log('update data failure' + data)
 }
 
 module.exports = {
