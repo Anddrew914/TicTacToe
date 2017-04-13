@@ -8,15 +8,36 @@ $white: #fff;
 body {
   background-color: $background-color;
   color: $font-color;
+  font-size: 80;
 
 }
-#playarea {
-  display: none;
-  margin: 100px auto;
-	background-color: #222222;
+.playarea {
+  // display: none;
+  // margin: 100px auto;
 	padding: 0px;
+  margin: 50px auto;
+  height: 450px;
+  width: 450px;
+  box-sizing: border-box;
+  font-size: 80;
 }
 
+.grid {
+  height: 150px;
+  padding:0;
+  // width: 150px;
+  color: black;
+  border: 1px solid black;
+  box-sizing: border-box;
+  font-size: 80;
+}
+
+.row {
+  padding:0;
+  // height: 33.33%;
+  color:black;
+  box-sizing: border-box;
+}
 #change-password {
   display: none;
 }
@@ -31,4 +52,7 @@ body {
 
 #sign-in {
   display: none;
+}
+p {
+  font-size: 80;
 }

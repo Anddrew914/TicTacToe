@@ -69,9 +69,9 @@ const update = (gameData) => {
 }
 
 const getGames = () => {
-  console.log('api getGames')
+  console.log("api")
   return $.ajax({
-    url: config.apiOrigin + '/games?over=false/',
+    url: config.apiOrigin + '/games/',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token

@@ -52,7 +52,7 @@ const onCreateGame = function () {
 const onGetGames = function () {
   console.log('get games events.js')
   event.preventDefault()
-  api.getGames()
+  api.getGames()  // this returns an object that gets passed
   .then(ui.getGamesSuccess)
   .catch(ui.getGamesFailure)
 }

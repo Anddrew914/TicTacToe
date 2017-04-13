@@ -62,10 +62,10 @@ const updateFailure = (data) => {
 }
 
 const getGamesSuccess = (data) => {
-  console.log('update data success' + data)
+  console.log('get games success', data)
 }
 const getGamesFailure = (data) => {
-  console.log('update data failure' + data)
+  console.log('get games failure')
 }
 
 module.exports = {
