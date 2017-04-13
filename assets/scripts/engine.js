@@ -44,7 +44,7 @@ const statecheck = function () {
 }
 
 // Click controller
-$('#playarea').on('click', 'img', function (evt) {
+const gamePlay = function () {
   if (statecheck() === true) {
     console.log("Game's over!")
     return
@@ -53,7 +53,7 @@ $('#playarea').on('click', 'img', function (evt) {
     console.log("I can't do that here!")
     return
   }
-  const idnumber = $(evt.target).data('id')
+  const idnumber = $(this).data('id')
   if (currentplayer === 'x') {
     $(this).attr('src', 'assets/styles/images/exes1.png')
     xArray.push(idnumber)
@@ -65,7 +65,7 @@ $('#playarea').on('click', 'img', function (evt) {
     currentplayer = 'x'
     return owinner()
   }
-})
+}
 
 $('.btn-group').on('click', '.signUp', function (evt) {
   $('#sign-up').toggle()
@@ -73,6 +73,9 @@ $('.btn-group').on('click', '.signUp', function (evt) {
 $('.btn-group').on('click', '.signIn', function (evt) {
   $('#sign-in').toggle()
 })
-// $('.btn-group').on('click', '.signIn', function (evt) {
-//   $('#sign-in').toggle()
-// })
+const addHandlers = () => {
+  $('img').on('click', gamePlay)
+}
+module.exports = {
+  addHandlers
+}

@@ -2,7 +2,7 @@
 
 const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
-
+const engine = require('./engine.js')
 $(() => {
   setAPIOrigin(location, config)
 })
@@ -18,6 +18,7 @@ const authEvents = require('./auth/events.js')
 // On document ready
 $(() => {
   authEvents.addHandlers()
+  engine.addHandlers()
 })
 
 // Changes image (moved to engine.js)
