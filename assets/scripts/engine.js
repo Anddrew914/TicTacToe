@@ -1,3 +1,5 @@
+const api = require('./api')
+const ui = require('./ui')
 // const board = [0, 1, 2, 3, 4, 5, 6, 7, 8]
 const winning = [[0, 1, 2], [3, 4, 5], [6, 7, 8],
                  [0, 3, 6], [1, 4, 7], [2, 5, 8],
@@ -37,6 +39,7 @@ const clickcheck = function () {
   }
 }
 
+
 // Click controller
 const gamePlay = function () {
   if (open === false) {
@@ -59,6 +62,10 @@ const gamePlay = function () {
     currentplayer = 'x'
     owinner()
   }
+
+  api.signUp(data)
+    .then(ui.signUpSuccess)
+    .catch(ui.signUpFailure)
 }
 
 $('.btn-group').on('click', '.signUp', function (evt) {
