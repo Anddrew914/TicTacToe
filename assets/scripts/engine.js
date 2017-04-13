@@ -52,12 +52,12 @@ const gamePlay = function () {
     $(this).attr('src', 'assets/styles/images/exes1.png')
     xArray.push(idnumber)
     currentplayer = 'o'
-    return xwinner()
+    xwinner()
   } else {
     $(this).attr('src', 'assets/styles/images/ohs1.png')
     oArray.push(idnumber)
     currentplayer = 'x'
-    return owinner()
+    owinner()
   }
 }
 
