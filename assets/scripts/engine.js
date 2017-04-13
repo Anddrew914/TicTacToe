@@ -33,8 +33,8 @@ const owinner = function () {
 }
 
 const clickcheck = function () {
-  if ($(event.target).attr('src') === 'assets/images/exes1.png' ||
-      $(event.target).attr('src') === 'assets/images/ohs1.png') {
+  if ($(this).textContent === 'X' ||
+      $(this).textContent === 'O') {
     return true
   }
 }
@@ -49,14 +49,14 @@ const gamePlay = function () {
     console.log("I can't do that here!")
     return
   }
-  const idnumber = $(this).data('id')
+  const idnumber = this.dataset.id
   if (currentplayer === 'X') {
-    $(this).attr('src', 'assets/images/exes1.png')
+    $(this).text('X')
     xArray.push(idnumber)
     currentplayer = 'O'
     xwinner()
   } else {
-    $(this).attr('src', 'assets/images/ohs1.png')
+    $(this).text('O')
     oArray.push(idnumber)
     currentplayer = 'X'
     owinner()
@@ -82,7 +82,7 @@ $('.btn-group').on('click', '.signIn', function (evt) {
   $('#sign-in').toggle()
 })
 const addHandlers = () => {
-  $('img').on('click', gamePlay)
+  $('.btn-block').on('click', gamePlay)
 }
 module.exports = {
   addHandlers
