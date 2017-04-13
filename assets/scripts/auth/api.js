@@ -44,10 +44,35 @@ const signOut = (data) => {
     data
   })
 }
+const createGame = () => {
+  console.log('api')
+  return $.ajax({
+    method: 'POST',
+    url: config.apiOrigin + '/games/',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: {}
+  })
+}
+
+const update = (gameData) => {
+  console.log('api' + store.game)
+  return $.ajax({
+    url: config.apiOrigin + '/games/' + store.game.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: gameData
+  })
+}
 
 module.exports = {
   signUp,
   signIn,
   changePassword,
-  signOut
+  signOut,
+  createGame,
+  update
 }

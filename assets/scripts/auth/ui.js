@@ -41,6 +41,26 @@ const signOutSuccess = (data) => {
 const signOutFailure = (error) => {
   console.log(error)
 }
+
+const createGameSuccess = (data) => {
+  $('#playarea').toggle()
+  store.game = data.game
+  console.log(store.game)
+  console.log(store.game.id)
+}
+
+const createGameFailure = () => {
+  console.log('create game failure')
+}
+
+const updateSuccess = (data) => {
+  console.log('update data' + data)
+}
+
+const updateFailure = (data) => {
+  console.log('update data' + data)
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -49,5 +69,9 @@ module.exports = {
   changePasswordSuccess,
   changePasswordFailure,
   signOutSuccess,
-  signOutFailure
+  signOutFailure,
+  updateSuccess,
+  updateFailure,
+  createGameSuccess,
+  createGameFailure
 }
