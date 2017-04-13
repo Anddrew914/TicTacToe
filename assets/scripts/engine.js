@@ -33,8 +33,8 @@ const owinner = function () {
 }
 
 const clickcheck = function () {
-  if ($(event.target).attr('src') === 'assets/styles/images/exes1.png' ||
-      $(event.target).attr('src') === 'assets/styles/images/ohs1.png') {
+  if ($(event.target).attr('src') === 'assets/images/exes1.png' ||
+      $(event.target).attr('src') === 'assets/images/ohs1.png') {
     return true
   }
 }
@@ -51,12 +51,12 @@ const gamePlay = function () {
   }
   const idnumber = $(this).data('id')
   if (currentplayer === 'X') {
-    $(this).attr('src', 'assets/styles/images/exes1.png')
+    $(this).attr('src', 'assets/images/exes1.png')
     xArray.push(idnumber)
     currentplayer = 'O'
     xwinner()
   } else {
-    $(this).attr('src', 'assets/styles/images/ohs1.png')
+    $(this).attr('src', 'assets/images/ohs1.png')
     oArray.push(idnumber)
     currentplayer = 'X'
     owinner()
