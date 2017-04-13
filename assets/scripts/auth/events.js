@@ -41,11 +41,20 @@ const onSignOut = function (event) {
     .catch(ui.signOutFailure)
 }
 
+const onCreateGame = function () {
+  console.log('game created events')
+  event.preventDefault()
+  api.createGame()
+  .then(ui.createGameSuccess)
+  .catch(ui.createGameFailure)
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
+  $('#create-game').on('submit', onCreateGame)
 }
 
 module.exports = {
