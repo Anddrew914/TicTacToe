@@ -52,9 +52,18 @@ const onCreateGame = function () {
 const onGetGames = function () {
   console.log('get games events.js')
   event.preventDefault()
-  api.getGames()
+  api.getGames()  // this returns an object that gets passed
   .then(ui.getGamesSuccess)
   .catch(ui.getGamesFailure)
+}
+
+const onGetGame = function (event) {
+  const data = getFormFields(this)
+  console.log('get game events.js')
+  event.preventDefault()
+  api.getGame(data)  // this returns an object that gets passed
+  .then(ui.getGameSuccess)
+  .catch(ui.getGameFailure)
 }
 
 const addHandlers = () => {
@@ -64,6 +73,7 @@ const addHandlers = () => {
   $('#sign-out').on('submit', onSignOut)
   $('#create-game').on('submit', onCreateGame)
   $('#get-games').on('submit', onGetGames)
+  $('#get-game').on('submit', onGetGame)
 }
 
 module.exports = {
