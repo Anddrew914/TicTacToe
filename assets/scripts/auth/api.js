@@ -68,10 +68,21 @@ const update = (gameData) => {
   })
 }
 
-const getGames = () => {
-  console.log("api")
+const getGames = (data) => {
+  console.log('api', data)
   return $.ajax({
     url: config.apiOrigin + '/games/',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const getGame = (data) => {
+  console.log('api', data)
+  return $.ajax({
+    url: config.apiOrigin + '/games/' + data.gameId,
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -86,5 +97,6 @@ module.exports = {
   signOut,
   createGame,
   update,
-  getGames
+  getGames,
+  getGame
 }

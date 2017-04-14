@@ -4,7 +4,11 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 $background-color: #4e4e4e;
 $font-color: #dfdfdf;
 $white: #fff;
-
+.text-box {
+  float:right;
+  margin: 0 auto;
+  font-size: 45px;
+}
 body {
   background-color: $background-color;
   color: $font-color;
@@ -13,7 +17,6 @@ body {
 }
 .playarea {
   // display: none;
-  // margin: 100px auto;
 	padding: 0px;
   margin: 50px auto;
   height: 450px;
