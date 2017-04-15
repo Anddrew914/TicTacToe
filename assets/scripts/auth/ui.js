@@ -7,6 +7,9 @@ const signUpSuccess = (data) => {
 
 const signUpFailure = (error) => {
   $('div.text-box').text('Error, wrong password?')
+  setTimeout(function () {
+    $('div.text-box').fadeOut().empty()
+  }, 3000)
 }
 
 const signInSuccess = (data) => {
@@ -19,19 +22,30 @@ const signInSuccess = (data) => {
   $('#create-game').show()
   $('.signUp').hide()
   $('.signIn').hide()
+  $('.signUp').hide()
+
 }
 
 const signInFailure = (data) => {
   console.log(data)
   $('div.text-box').text('Oops! Did you create a username?')
+  setTimeout(function () {
+    $('div.text-box').fadeOut().empty()
+  }, 3000)
 }
 
 const changePasswordSuccess = (data) => {
   $('div.text-box').text('Password changed!')
+  setTimeout(function () {
+    $('div.text-box').fadeOut().empty()
+  }, 3000)
 }
 
 const changePasswordFailure = () => {
   $('div.text-box').text('That didn\'t work, try again!')
+  setTimeout(function () {
+    $('div.text-box').fadeOut().empty()
+  }, 3000)
 }
 
 const signOutSuccess = (data) => {
@@ -47,32 +61,34 @@ const signOutFailure = (error) => {
 }
 
 const createGameSuccess = (data) => {
-  $('#playarea').toggle()
+  $('#playarea').show()
+  $('#get-games').show()
+  $('#get-game').show()
+  $('img.img-responsive').attr('src', 'https://raw.githubusercontent.com/Anddrew914/TicTacToe/master/assets/images/blank1.png')
+  console.log(data)
   store.game = data.game
-  console.log(store.game)
-  console.log(store.game.id)
 }
 
 const createGameFailure = () => {
-  console.log('create game failure')
 }
 
 const updateSuccess = (data) => {
-  console.log('update data success' + data)
 }
 
 const updateFailure = (data) => {
-  console.log('update data failure' + data)
 }
 
 const getGamesSuccess = (data) => {
-  console.log('you have played ' + (data.games.length + 1) + ' games')
+  $('div.text-box').text('you have played ' + (data.games.length + 1) + ' games')
+  setTimeout(function () {
+    $('div.get-text-box').fadeOut().empty()
+  }, 3000)
 }
 
 const getGamesFailure = (data) => {
-  console.log('get games failure')
 }
 const getGameSuccess = (data) => {
+  debugger
   console.log(data)
 }
 

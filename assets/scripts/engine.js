@@ -10,13 +10,22 @@ const oArray = []
 let over = false
 let currentplayer = 'X'
 
+const clearBoard = function () {
+  xArray.length = 0
+  oArray.length = 0
+  over = false
+}
+
 const xwinner = function () {
   $.each(winning, function (index, value) {
     if (xArray.includes(value[0]) &&
       xArray.includes(value[1]) &&
       xArray.includes(value[2])) {
       over = true
-      console.log('winner!')
+      $('div.text-box').text('X wins!')
+      setTimeout(function () {
+        $('div.get-text-box').fadeOut().empty()
+      }, 3000)
     }
   })
 }
@@ -27,7 +36,10 @@ const owinner = function () {
       oArray.includes(value[1]) &&
       oArray.includes(value[2])) {
       over = true
-      console.log('winner!')
+      $('div.text-box').text('O wins!')
+      setTimeout(function () {
+        $('div.get-text-box').fadeOut().empty()
+      }, 3000)
     }
   })
 }
@@ -77,10 +89,13 @@ const gamePlay = function () {
 
 $('.btn-group').on('click', '.signUp', function (evt) {
   $('#sign-up').toggle()
+  $('#sign-in').hide()
 })
 $('.btn-group').on('click', '.signIn', function (evt) {
   $('#sign-in').toggle()
+  $('#sign-up').hide()
 })
+$('#create-game').on('submit', clearBoard)
 const addHandlers = () => {
   $('img').on('click', gamePlay)
 }
