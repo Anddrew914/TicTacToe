@@ -1,108 +1,113 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags unless you know what you are doing -->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags unless you know what you are doing -->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
+  <!-- Do not add `link` tags unless you know what you are doing -->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-    <body class="container-fluid">
-      <h1>Tic-Tac-Toe</h1>
-      <div class="text-box">
-      </div>
-    <nav>
-      <div class="btn-group sign-in-group" role="group">
-        <button type="button" class="btn btn-default signUp">Sign Up</button>
-        <button type="button" class="btn btn-default signIn">Sign In</button>
-      </div>
-      <form id="sign-up">
-        <fieldset>
-          <legend>Sign up!</legend>
-          <input name="credentials[email]" type="text" value="Email" onFocus="this.select()">
-          <input name="credentials[password]" type="password" value="Password" onFocus="this.select()">
-          <input name="credentials[password_confirmation]" type="password" value="Password" onFocus="this.select()">
-          <input type="submit" name="submit" value="Sign up!">
-        </fieldset>
-      </form>
+  <!-- Do not add `script` tags unless you know what you are doing -->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
 
-      <form id="sign-in">
-        <fieldset>
-          <legend>Sign in!</legend>
-          <input name="credentials[email]" type="text" value="Email" onFocus="this.select()">
-          <input name="credentials[password]" type="password" value="Password" onFocus="this.select()">
-          <input type="submit" name="submit" value="Sign in!">
-        </fieldset>
-      </form>
+<body class="container-fluid">
+  <h1>Tic-Tac-Toe</h1>
+  <nav>
+    <div class="btn-group sign-in-group" role="group">
+      <button type="button" class="btn btn-default signUp">Sign Up</button>
+      <button type="button" class="btn btn-default signIn">Sign In</button>
+    </div>
+    <form id="sign-up">
+      <fieldset>
+        <legend>Sign up!</legend>
+        <input name="credentials[email]" type="text" value="Email" onFocus="this.select()">
+        <input name="credentials[password]" type="password" value="Password" onFocus="this.select()">
+        <input name="credentials[password_confirmation]" type="password" value="Password" onFocus="this.select()">
+        <input type="submit" class="btn btn-default" name="submit" value="Sign up!">
+      </fieldset>
+    </form>
 
-      <form id="change-password">
-        <fieldset>
-          <legend>Change password!</legend>
-          <input type="password" name="passwords[old]" placeholder="Old Password" onFocus="this.select()">
-          <input type="password" name="passwords[new]" placeholder="New Password" onFocus="this.select()">
-          <input type="submit" name="submit" value="Change password!">
-        </fieldset>
-      </form>
+    <form id="sign-in">
+      <fieldset>
+        <legend>Sign in!</legend>
+        <input name="credentials[email]" type="text" value="Email" onFocus="this.select()">
+        <input name="credentials[password]" type="password" value="Password" onFocus="this.select()">
+        <input type="submit" class="btn btn-default" name="submit" value="Sign in!">
+      </fieldset>
+    </form>
 
-      <form id="sign-out">
-        <fieldset>
-          <legend>Sign Out!</legend>
-          <input type="submit" name="submit" value="Log out">
-        </fieldset>
-      </form>
+    <form id="change-password">
+      <fieldset>
+        <legend>Change password!</legend>
+        <input type="password" name="passwords[old]" placeholder="Old Password" onFocus="this.select()">
+        <input type="password" name="passwords[new]" placeholder="New Password" onFocus="this.select()">
+        <input type="submit" class="btn btn-default" name="submit" value="Change password!">
+      </fieldset>
+    </form>
 
-      <form id="get-games">
-        <fieldset>
-          <legend>Get Games!</legend>
-          <input type="submit" name="submit" value="Get Games">
-        </fieldset>
-      </form>
+    <form id="sign-out">
+      <fieldset>
+        <legend>Sign Out!</legend>
+        <input type="submit" class="btn btn-default" name="submit" value="Log out">
+      </fieldset>
+    </form>
 
-      <form id="get-game">
-        <fieldset>
-          <legend>Get Game!</legend>
-          <input type="text" name="gameId">
-          <input type="submit" name="submit" value="Get Game">
-        </fieldset>
-      </form>
+    <form id="get-games">
+      <fieldset>
+        <legend>Get Games!</legend>
+        <input type="submit" class="btn btn-default" name="submit" value="Get Games">
+      </fieldset>
+    </form>
 
-      <form id="create-game">
-        <fieldset>
-          <legend>Create Game!</legend>
-          <input type="submit" name="submit" value="Create Game">
-        </fieldset>
-      </form>
-    </nav>
+    <form id="get-game">
+      <fieldset>
+        <legend>Get Game!</legend>
+        <input type="text" name="gameId">
+        <input type="submit" class="btn btn-default" name="submit" value="Get Game">
+      </fieldset>
+    </form>
 
-        <div id="left-spacer" class="col-xs-1 col-sm-3 col-md-3">
-        </div>
-        <div id="playarea" class="col-xs-10 col-sm-6 col-md-6">
-        			<div class="row">
-                <div class="col-lg-4 col-xs-4 col-4"><img alt="tic-tac-toe-picture" data-id="0" src="https://raw.githubusercontent.com/Anddrew914/TicTacToe/master/assets/images/blank1.png " class="img-responsive"></div>
-                <div class="col-lg-4 col-xs-4 col-4"><img alt="tic-tac-toe-picture" data-id="1" src="https://raw.githubusercontent.com/Anddrew914/TicTacToe/master/assets/images/blank1.png " class="img-responsive"></div>
-                <div class="col-lg-4 col-xs-4 col-4"><img alt="tic-tac-toe-picture" data-id="2" src="https://raw.githubusercontent.com/Anddrew914/TicTacToe/master/assets/images/blank1.png " class="img-responsive"></div>
-              </div>
-              <br>
-              <div class="row">
-                <div class="col-lg-4 col-xs-4 col-4"><img alt="tic-tac-toe-picture" data-id="3" src="https://raw.githubusercontent.com/Anddrew914/TicTacToe/master/assets/images/blank1.png " class="img-responsive"></div>
-                <div class="col-lg-4 col-xs-4 col-4"><img alt="tic-tac-toe-picture" data-id="4" src="https://raw.githubusercontent.com/Anddrew914/TicTacToe/master/assets/images/blank1.png " class="img-responsive"></div>
-                <div class="col-lg-4 col-xs-4 col-4"><img alt="tic-tac-toe-picture" data-id="5" src="https://raw.githubusercontent.com/Anddrew914/TicTacToe/master/assets/images/blank1.png " class="img-responsive"></div>
-              </div>
-              <br>
-              <div class="row">
-                <div class="col-lg-4 col-xs-4 col-4"><img alt="tic-tac-toe-picture" data-id="6" src="https://raw.githubusercontent.com/Anddrew914/TicTacToe/master/assets/images/blank1.png " class="img-responsive"></div>
-                <div class="col-lg-4 col-xs-4 col-4"><img alt="tic-tac-toe-picture" data-id="7" src="https://raw.githubusercontent.com/Anddrew914/TicTacToe/master/assets/images/blank1.png " class="img-responsive"></div>
-                <div class="col-lg-4 col-xs-4 col-4"><img alt="tic-tac-toe-picture" data-id="8" src="https://raw.githubusercontent.com/Anddrew914/TicTacToe/master/assets/images/blank1.png " class="img-responsive"></div>
-            </div>
-          </div>
+    <form id="create-game">
+      <fieldset>
+        <legend>Create Game!</legend>
+        <input type="submit" class="btn btn-default" name="submit" value="Create Game">
+      </fieldset>
+    </form>
+  </nav>
 
-          <div id="right-spacer" class="col-xs-1 col-sm-3 col-md-3">
-          </div>
+  <div class="text-box">
 
-    </body>
+    asdfasdf
+  </div>
+
+  <div id="left-spacer" class="col-xs-1 col-sm-3 col-md-3">
+  </div>
+  <div id="playarea" class="col-xs-10 col-sm-6 col-md-6">
+    <div class="row">
+      <div class="col-lg-4 col-xs-4 col-4"><img alt="tic-tac-toe-picture" data-id="0" src="https://raw.githubusercontent.com/Anddrew914/TicTacToe/master/assets/images/blank1.png " class="img-responsive"></div>
+      <div class="col-lg-4 col-xs-4 col-4"><img alt="tic-tac-toe-picture" data-id="1" src="https://raw.githubusercontent.com/Anddrew914/TicTacToe/master/assets/images/blank1.png " class="img-responsive"></div>
+      <div class="col-lg-4 col-xs-4 col-4"><img alt="tic-tac-toe-picture" data-id="2" src="https://raw.githubusercontent.com/Anddrew914/TicTacToe/master/assets/images/blank1.png " class="img-responsive"></div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-lg-4 col-xs-4 col-4"><img alt="tic-tac-toe-picture" data-id="3" src="https://raw.githubusercontent.com/Anddrew914/TicTacToe/master/assets/images/blank1.png " class="img-responsive"></div>
+      <div class="col-lg-4 col-xs-4 col-4"><img alt="tic-tac-toe-picture" data-id="4" src="https://raw.githubusercontent.com/Anddrew914/TicTacToe/master/assets/images/blank1.png " class="img-responsive"></div>
+      <div class="col-lg-4 col-xs-4 col-4"><img alt="tic-tac-toe-picture" data-id="5" src="https://raw.githubusercontent.com/Anddrew914/TicTacToe/master/assets/images/blank1.png " class="img-responsive"></div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-lg-4 col-xs-4 col-4"><img alt="tic-tac-toe-picture" data-id="6" src="https://raw.githubusercontent.com/Anddrew914/TicTacToe/master/assets/images/blank1.png " class="img-responsive"></div>
+      <div class="col-lg-4 col-xs-4 col-4"><img alt="tic-tac-toe-picture" data-id="7" src="https://raw.githubusercontent.com/Anddrew914/TicTacToe/master/assets/images/blank1.png " class="img-responsive"></div>
+      <div class="col-lg-4 col-xs-4 col-4"><img alt="tic-tac-toe-picture" data-id="8" src="https://raw.githubusercontent.com/Anddrew914/TicTacToe/master/assets/images/blank1.png " class="img-responsive"></div>
+    </div>
+  </div>
+
+  <div id="right-spacer" class="col-xs-1 col-sm-3 col-md-3">
+  </div>
+
+</body>
+
 </html>

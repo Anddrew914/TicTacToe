@@ -6,7 +6,7 @@ const signUpSuccess = (data) => {
 }
 
 const signUpFailure = (error) => {
-  console.error(error)
+  $('div.text-box').text('Error, wrong password?')
 }
 
 const signInSuccess = (data) => {
@@ -19,20 +19,19 @@ const signInSuccess = (data) => {
   $('#create-game').show()
   $('.signUp').hide()
   $('.signIn').hide()
-
-
 }
 
-const signInFailure = (error) => {
-  console.error(error)
+const signInFailure = (data) => {
+  console.log(data)
+  $('div.text-box').text('Oops! Did you create a username?')
 }
 
 const changePasswordSuccess = (data) => {
-  console.log('data is', data)
+  $('div.text-box').text('Password changed!')
 }
 
-const changePasswordFailure = (error) => {
-  console.log(error)
+const changePasswordFailure = () => {
+  $('div.text-box').text('That didn\'t work, try again!')
 }
 
 const signOutSuccess = (data) => {
