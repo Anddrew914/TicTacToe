@@ -12,10 +12,15 @@ const signUpFailure = (error) => {
 const signInSuccess = (data) => {
   console.log(data)
   store.user = data.user
-  $('#playarea').toggle()
+  // $('#playarea').toggle()
   $('#sign-in').hide()
   $('#sign-up').hide()
   $('#sign-out').show()
+  $('#create-game').show()
+  $('.signUp').hide()
+  $('.signIn').hide()
+
+
 }
 
 const signInFailure = (error) => {
@@ -62,7 +67,7 @@ const updateFailure = (data) => {
 }
 
 const getGamesSuccess = (data) => {
-  console.log('you have played' + (data.games.length + 1) + ' games')
+  console.log('you have played ' + (data.games.length + 1) + ' games')
 }
 
 const getGamesFailure = (data) => {

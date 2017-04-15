@@ -13,8 +13,8 @@ body {
   background-color: $background-color;
   color: $font-color;
   font-size: 80;
-
 }
+
 #playarea {
   display: none;
 	padding: 0px;
@@ -56,6 +56,27 @@ body {
 #sign-in {
   display: none;
 }
+
+#get-games {
+  display: none;
+}
+
+#get-game {
+  display: none;
+}
+
+#create-game {
+  display: none;
+}
+
 p {
   font-size: 80;
+}
+
+form {
+  color: black;
+}
+
+btn {
+  background-color: black;
 }
