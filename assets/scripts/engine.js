@@ -14,6 +14,7 @@ const clearBoard = function () {
   xArray.length = 0
   oArray.length = 0
   over = false
+  $('div.text-box').text('')
 }
 
 const xwinner = function () {

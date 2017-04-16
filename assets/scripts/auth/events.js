@@ -23,9 +23,7 @@ const onSignIn = function (event) {
 
 const onChangePassword = function (event) {
   event.preventDefault()
-  console.log('inside')
   const data = getFormFields(event.target)
-
   api.changePassword(data)
     .then(ui.changePasswordSuccess)
     .catch(ui.changePasswordFailure)
@@ -33,16 +31,13 @@ const onChangePassword = function (event) {
 
 const onSignOut = function (event) {
   event.preventDefault()
-  console.log('logOut')
   const data = getFormFields(event.target)
-
   api.signOut(data)
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
 }
 
 const onCreateGame = function () {
-  console.log('game created events')
   event.preventDefault()
   api.createGame()
   .then(ui.createGameSuccess)
@@ -50,7 +45,6 @@ const onCreateGame = function () {
 }
 
 const onGetGames = function () {
-  console.log('get games events.js')
   event.preventDefault()
   api.getGames()  // this returns an object that gets passed
   .then(ui.getGamesSuccess)
@@ -59,7 +53,6 @@ const onGetGames = function () {
 
 const onGetGame = function (event) {
   const data = getFormFields(this)
-  console.log('get game events.js')
   event.preventDefault()
   api.getGame(data)  // this returns an object that gets passed
   .then(ui.getGameSuccess)

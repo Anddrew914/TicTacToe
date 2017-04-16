@@ -1,19 +1,17 @@
 'use strict'
 const store = require('../store.js')
 const signUpSuccess = (data) => {
-  console.log(data)
   $('#sign-up').hide()
 }
 
-const signUpFailure = (error) => {
+const signUpFailure = () => {
   $('div.text-box').text('Error, wrong password?')
   setTimeout(function () {
-    $('div.text-box').fadeOut().empty()
+    $('div.text-box').text('')
   }, 3000)
 }
 
 const signInSuccess = (data) => {
-  console.log(data)
   store.user = data.user
   // $('#playarea').toggle()
   $('#sign-in').hide()
@@ -22,42 +20,43 @@ const signInSuccess = (data) => {
   $('#create-game').show()
   $('.signUp').hide()
   $('.signIn').hide()
-  $('.signUp').hide()
-
 }
 
 const signInFailure = (data) => {
-  console.log(data)
   $('div.text-box').text('Oops! Did you create a username?')
   setTimeout(function () {
-    $('div.text-box').fadeOut().empty()
+    $('div.text-box').text('')
   }, 3000)
+  console.log(data)
+  debugger
 }
 
 const changePasswordSuccess = (data) => {
   $('div.text-box').text('Password changed!')
   setTimeout(function () {
-    $('div.text-box').fadeOut().empty()
+    $('div.text-box').text('')
   }, 3000)
 }
 
 const changePasswordFailure = () => {
   $('div.text-box').text('That didn\'t work, try again!')
   setTimeout(function () {
-    $('div.text-box').fadeOut().empty()
+    $('div.text-box').text('')
   }, 3000)
 }
 
 const signOutSuccess = (data) => {
-  console.log('data is sign', data)
   $('#playarea').hide()
-  $('#sign-in').show()
-  $('#sign-up').show()
+  // $('#sign-in').show()
+  // $('#sign-up').show()
   $('#sign-out').hide()
+  $('.signUp').show()
+  $('.signIn').show()
+  $('#create-game').hide()
+  $('div.text-box').text('')
 }
 
-const signOutFailure = (error) => {
-  console.log(error)
+const signOutFailure = () => {
 }
 
 const createGameSuccess = (data) => {
@@ -70,6 +69,7 @@ const createGameSuccess = (data) => {
 }
 
 const createGameFailure = () => {
+  $('div.text-box').text('Please sign in first.')
 }
 
 const updateSuccess = (data) => {
@@ -100,7 +100,6 @@ const getGameSuccess = (data) => {
 }
 
 const getGameFailure = (data) => {
-  console.log('get game failure')
 }
 
 module.exports = {
