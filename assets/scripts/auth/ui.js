@@ -28,7 +28,6 @@ const signInFailure = (data) => {
     $('div.text-box').text('')
   }, 3000)
   console.log(data)
-  debugger
 }
 
 const changePasswordSuccess = (data) => {
