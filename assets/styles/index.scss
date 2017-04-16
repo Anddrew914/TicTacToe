@@ -15,16 +15,16 @@ body {
   color: $font-color;
   font-size: 80;
   text-align: center;
+  align-items: center;
 }
 
 #playarea {
   display: none;
 	padding: 0px;
   margin: 50px auto;
-  height: 450px;
-  width: 450px;
   box-sizing: border-box;
   font-size: 80;
+  float: none;
 }
 
 .grid {
@@ -49,6 +49,7 @@ body {
 
 #sign-out {
   display: none;
+  margin: 30px auto;
 }
 
 #sign-up {
@@ -57,24 +58,43 @@ body {
 
 #sign-in {
   display: none;
+  margin-top: 30px;
 }
 
 .get-div {
   clear: both;
 }
-
+@media (max-width: 600px) {
+  #get-games {
+    float: none;
+  }
+  #get-game {
+    float: none;
+  }
+}
 #get-games {
   display: none;
   float: left;
+
 }
 
 #get-game {
   display: none;
   float: right;
+
+}
+@media (max-width: 388px) {
+  #get-games {
+    float: none;
+  }
+  #get-game {
+    float: none;
+  }
 }
 
 #create-game {
   display: none;
+  margin: 30px auto;
 }
 
 p {

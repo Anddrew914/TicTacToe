@@ -87,9 +87,16 @@ const getGamesSuccess = (data) => {
 
 const getGamesFailure = (data) => {
 }
+
 const getGameSuccess = (data) => {
-  debugger
-  console.log(data)
+  const board = data.game.cells.map(value => {
+    if (value === '') {
+      return '_'
+    }
+    return value
+  })
+  $('div.get-text-box').html('[' + board.slice(0, 3) + ']<br/>[' +
+    board.slice(3, 6) + ']<br/>[' + board.slice(6, 9) + ']')
 }
 
 const getGameFailure = (data) => {
