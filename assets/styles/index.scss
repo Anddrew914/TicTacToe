@@ -18,31 +18,22 @@ body {
   align-items: center;
 }
 
-#playarea {
-  display: none;
-	padding: 0px;
-  margin: 50px auto;
-  box-sizing: border-box;
-  font-size: 80;
-  float: none;
-}
-
-.grid {
-  height: 150px;
-  padding:0;
-  // width: 150px;
-  color: black;
-  border: 1px solid black;
-  box-sizing: border-box;
-  font-size: 80;
-}
+  #playarea {
+    display: none;
+  	padding: 0px;
+    margin: 50px auto;
+    box-sizing: border-box;
+    font-size: 80;
+    float: none;
+    align-items: center;
+  }
 
 .row {
   padding:0;
-  // height: 33.33%;
   color:black;
   box-sizing: border-box;
 }
+
 #change-password {
   display: none;
 }
