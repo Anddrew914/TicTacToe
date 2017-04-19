@@ -1,7 +1,12 @@
 'use strict'
 const store = require('../store.js')
+
 const signUpSuccess = (data) => {
   $('#sign-up').hide()
+  $('div.text-box').text('You\'ve signed up!')
+  setTimeout(function () {
+    $('div.text-box').text('')
+  }, 3000)
 }
 
 const signUpFailure = () => {
@@ -53,6 +58,10 @@ const signOutSuccess = (data) => {
   $('.signIn').show()
   $('#create-game').hide()
   $('div.text-box').text('')
+  $('#get-games').hide()
+  $('#get-game').hide()
+
+
 }
 
 const signOutFailure = () => {
@@ -70,6 +79,9 @@ const createGameSuccess = (data) => {
 const createGameFailure = () => {
   $('div.text-box').text('Please sign in first.')
 }
+setTimeout(function () {
+  $('div.text-box').text('')
+}, 3000)
 
 const updateSuccess = (data) => {
 }
@@ -78,7 +90,8 @@ const updateFailure = (data) => {
 }
 
 const getGamesSuccess = (data) => {
-  $('div.text-box').text('you have played ' + (data.games.length + 1) + ' games')
+  $('div.text-box').text('You have played ' + (data.games.length + 1) + ' games ' +
+   (data.games[data.games.length - 1].id) + ' was your last game ID')
   setTimeout(function () {
     $('div.get-text-box').fadeOut().empty()
   }, 3000)
