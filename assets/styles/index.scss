@@ -27,6 +27,14 @@ body {
   float: none;
 }
 
+.img-responsive {
+  height: 100px;
+}
+
+ .col-lg-4, .col-xs-4, .col-4 {
+   width: inherit;
+ }
+
 .grid {
   height: 150px;
   padding:0;
@@ -39,7 +47,7 @@ body {
 
 .row {
   padding:0;
-  // height: 33.33%;
+  height: 33.33%;
   color:black;
   box-sizing: border-box;
 }
