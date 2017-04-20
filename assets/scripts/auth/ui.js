@@ -93,7 +93,7 @@ const getGamesSuccess = (data) => {
    (data.games[data.games.length - 1].id) + ' was your last game ID')
   setTimeout(function () {
     $('div.text-box').text('')
-  }, 3000)
+  }, 8000)
 }
 
 const getGamesFailure = (data) => {
