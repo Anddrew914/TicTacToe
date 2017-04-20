@@ -10,7 +10,7 @@ const signUpSuccess = (data) => {
 }
 
 const signUpFailure = () => {
-  $('div.text-box').text('Error, wrong password?')
+  $('div.text-box').text('Please check your username and password')
   setTimeout(function () {
     $('div.text-box').text('')
   }, 3000)
@@ -29,7 +29,7 @@ const signInSuccess = (data) => {
 }
 
 const signInFailure = (data) => {
-  $('div.text-box').text('Oops! Did you create a username?')
+  $('div.text-box').text('Please check your username and password.')
   setTimeout(function () {
     $('div.text-box').text('')
   }, 3000)
