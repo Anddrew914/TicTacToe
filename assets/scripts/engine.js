@@ -9,12 +9,15 @@ const xArray = []
 const oArray = []
 let over = false
 let currentplayer = 'X'
+let currentplayerdata = 'O'
 
 const clearBoard = function () {
   xArray.length = 0
   oArray.length = 0
   over = false
   $('div.text-box').text('')
+  currentplayer = 'X'
+  currentplayerdata = 'O'
 }
 
 const xwinner = function () {
@@ -25,7 +28,7 @@ const xwinner = function () {
       over = true
       $('div.text-box').text('X wins!')
       setTimeout(function () {
-        $('div.get-text-box').fadeOut().empty()
+        $('div.text-box').text('')
       }, 3000)
     }
   })
@@ -39,7 +42,7 @@ const owinner = function () {
       over = true
       $('div.text-box').text('O wins!')
       setTimeout(function () {
-        $('div.get-text-box').fadeOut().empty()
+        $('div.text-box').text('')
       }, 3000)
     }
   })
@@ -55,11 +58,9 @@ const clickcheck = function () {
 // Click controller
 const gamePlay = function () {
   if (over === true) {
-    console.log("Game's over!")
     return
   }
   if (clickcheck() === true) {
-    console.log("I can't do that here!")
     return
   }
   const idnumber = $(this).data('id')
@@ -67,18 +68,20 @@ const gamePlay = function () {
     $(this).attr('src', 'https://raw.githubusercontent.com/Anddrew914/TicTacToe/master/assets/images/exes1.png')
     xArray.push(idnumber)
     currentplayer = 'O'
+    currentplayerdata = 'X'
     xwinner()
   } else {
     $(this).attr('src', 'https://raw.githubusercontent.com/Anddrew914/TicTacToe/master/assets/images/ohs1.png')
     oArray.push(idnumber)
     currentplayer = 'X'
+    currentplayerdata = 'O'
     owinner()
   }
   const gameData = {
     'game': {
       'cell': {
         'index': idnumber,
-        'value': currentplayer
+        'value': currentplayerdata
       },
       'over': over
     }
@@ -97,6 +100,7 @@ $('.btn-group').on('click', '.signIn', function (evt) {
   $('#sign-up').hide()
 })
 $('#create-game').on('submit', clearBoard)
+
 const addHandlers = () => {
   $('img').on('click', gamePlay)
 }

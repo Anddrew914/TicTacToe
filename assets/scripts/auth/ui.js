@@ -25,6 +25,7 @@ const signInSuccess = (data) => {
   $('#create-game').show()
   $('.signUp').hide()
   $('.signIn').hide()
+  $('#change-password').show()
 }
 
 const signInFailure = (data) => {
@@ -32,7 +33,6 @@ const signInFailure = (data) => {
   setTimeout(function () {
     $('div.text-box').text('')
   }, 3000)
-  console.log(data)
 }
 
 const changePasswordSuccess = (data) => {
@@ -60,7 +60,7 @@ const signOutSuccess = (data) => {
   $('div.text-box').text('')
   $('#get-games').hide()
   $('#get-game').hide()
-
+  $('div.get-text-box').text('')
 
 }
 
@@ -72,7 +72,6 @@ const createGameSuccess = (data) => {
   $('#get-games').show()
   $('#get-game').show()
   $('img.img-responsive').attr('src', 'https://raw.githubusercontent.com/Anddrew914/TicTacToe/master/assets/images/blank1.png')
-  console.log(data)
   store.game = data.game
 }
 
@@ -93,7 +92,7 @@ const getGamesSuccess = (data) => {
   $('div.text-box').text('You have played ' + (data.games.length + 1) + ' games ' +
    (data.games[data.games.length - 1].id) + ' was your last game ID')
   setTimeout(function () {
-    $('div.get-text-box').fadeOut().empty()
+    $('div.text-box').text('')
   }, 3000)
 }
 
