@@ -61,6 +61,7 @@ const signOutSuccess = (data) => {
   $('#get-games').hide()
   $('#get-game').hide()
   $('div.get-text-box').text('')
+  $('#change-password').hide()
 
 }
 
