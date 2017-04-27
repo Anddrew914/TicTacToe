@@ -7,6 +7,7 @@ const signUpSuccess = (data) => {
   setTimeout(function () {
     $('div.text-box').text('')
   }, 3000)
+  document.getElementById('sign-up').reset()
 }
 
 const signUpFailure = () => {
@@ -26,6 +27,8 @@ const signInSuccess = (data) => {
   $('.signUp').hide()
   $('.signIn').hide()
   $('#change-password').show()
+  document.getElementById('sign-in').reset()
+
 }
 
 const signInFailure = (data) => {
@@ -62,7 +65,6 @@ const signOutSuccess = (data) => {
   $('#get-game').hide()
   $('div.get-text-box').text('')
   $('#change-password').hide()
-
 }
 
 const signOutFailure = () => {
