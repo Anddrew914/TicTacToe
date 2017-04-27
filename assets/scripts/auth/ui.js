@@ -92,7 +92,7 @@ const updateFailure = (data) => {
 }
 
 const getGamesSuccess = (data) => {
-  $('div.text-box').text('You have played ' + (data.games.length + 1) + ' games ' +
+  $('div.text-box').text('You have played ' + (data.games.length) + ' games ' +
    (data.games[data.games.length - 1].id) + ' was your last game ID')
   setTimeout(function () {
     $('div.text-box').text('')
