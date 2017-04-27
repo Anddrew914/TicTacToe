@@ -1,1 +1,65 @@
 TicTacToe By Andrew Easterling
+
+Link to game:
+  https://anddrew914.github.io/TicTacToe/
+
+List of technologies used:
+    Front-end: HTML, CSS, SCSS JavaScript, jQuery, Bootstrap
+    Back-end: Rails, ajax, jQuery
+
+Development Process:
+
+  I started working out the overall design for my website the weekend before we
+were set to start the project. I started with wireframes and user stories, as
+recommended by the guide. The wireframe was simple but still ended up being more
+complicated then my final project. This was because I didn't fully understand
+the requirements when I was designing it.
+  When it came time to actually start building out the website I started first
+with building the webpage. I used bootstrap to design my grid, since we'd just
+learned about it in class and I felt like it would be a valuable learning experience.
+I made the decision on the first day to use images to "fill out" my grid so that
+I could ultimately switch to using gifs to add animation to my board. The images
+ended up being a big headache down the road.
+  On the second day I started writing the engine for the game. This part was actually
+very quick for me. Once I built the click handler for the board and figured out
+what to actually attach to the click handler to get the squares to respond I was
+able to string together all the logic that day.
+  The third day was rough for me. I started working on the API the third day and
+ran into wall after wall while working on it. These troubles stemmed mostly from
+my insufficient understanding of how the API worked, specifically how it passed
+around data from function to function. I had a meeting Thursday morning which
+cleared up a lot of confusion on these issues and I was able to get the API
+working by late Thursday.
+  After getting the API to work I ran into issues trying to get GitHub pages
+to properly host my images that were being used in the tic tac toe board. This
+lead me to ultimately rebuild the entire board using simple css and bootstrap buttons.
+Once I managed to get a good looking board going on bootstrap I discovered that
+the boards buttons behaved differently than the images did. Something about how they
+used "this" and event targets was different and was throwing my entire engine off.
+Making the board using two different methods was a valuable learning experience,
+despite how frustrating it was at the time. After trouble shooting my broken engine
+for a couple hours I resigned myself to having an incomplete project Friday morning
+and went back to using images on my board. After finalizing some issue on the img
+based board I actually ended up managing to find a work around on gitHub pages and was
+able to present Friday morning using the live website!
+
+Problem solving Strategies.
+  The most valuable strategies I developed during the build were to use debugger
+and console logs everywhere. These allowed me to stop the code inside functions
+and use queries to find out what "this" was and where event targets pointed to.
+Another method I found useful when trying to trouble shoot single functions that
+were broken, especially if I suspected a missing parentheses or a brace/bracket
+was to simply retype the entire function and let the auto braces make sure everything
+was where it needed to be. This managed to fix several broken chunks of code.
+
+Unsolved Problems.
+  My page isn't as responsive as I'd like it to be. It looks good at all the
+default screen sizes, but looks strange in some of the transition zones. It has
+something to do with how bootstrap handles padding with my divs but I haven't had
+time to trouble shoot it fully yet. My web page is also pretty ugly. I didn't
+have time to stylize it and so in the future I plan on making the whole thing look
+more pretty. I would also like to add the ability for multiple users on a game,
+and users playing over the internet.
+
+Link to Wireframes and User Stories.
+  http://imgur.com/a/WXDHt
