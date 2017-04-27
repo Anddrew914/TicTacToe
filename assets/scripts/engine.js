@@ -55,6 +55,17 @@ const clickcheck = function () {
   }
 }
 
+const drawGame = function () {
+  if (xArray.length === 5 &&
+      over === false) {
+    $('div.text-box').text('Draw game!')
+    setTimeout(function () {
+      $('div.text-box').text('')
+    }, 3000)
+    over = true
+  }
+}
+
 // Click controller
 const gamePlay = function () {
   if (over === true) {
@@ -70,6 +81,7 @@ const gamePlay = function () {
     currentplayer = 'O'
     currentplayerdata = 'X'
     xwinner()
+    drawGame()
   } else {
     $(this).attr('src', 'https://raw.githubusercontent.com/Anddrew914/TicTacToe/master/assets/images/ohs1.png')
     oArray.push(idnumber)
