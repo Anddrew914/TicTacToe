@@ -3,6 +3,9 @@ TicTacToe By Andrew Easterling
 Link to game:
   https://anddrew914.github.io/TicTacToe/
 
+  Link to repo:
+    https://github.com/Anddrew914/TicTacToe
+
 List of technologies used:
     Front-end: HTML, CSS, SCSS JavaScript, jQuery, Bootstrap
     Back-end: Rails, ajax, jQuery
@@ -12,10 +15,10 @@ Development Process:
   I started working out the overall design for my website the weekend before we
 were set to start the project. I started with wireframes and user stories, as
 recommended by the guide. The wireframe was simple but still ended up being more
-complicated then my final project. This was because I didn't fully understand
+complicated than my final project. This was because I didn't fully understand
 the requirements when I was designing it.
   When it came time to actually start building out the website I started first
-with building the webpage. I used bootstrap to design my grid, since we'd just
+with building the web-page. I used bootstrap to design my grid, since we'd just
 learned about it in class and I felt like it would be a valuable learning experience.
 I made the decision on the first day to use images to "fill out" my grid so that
 I could ultimately switch to using gifs to add animation to my board. The images
@@ -47,8 +50,8 @@ Problem solving Strategies.
   The most valuable strategies I developed during the build were to use debugger
 and console logs everywhere. These allowed me to stop the code inside functions
 and use queries to find out what "this" was and where event targets pointed to.
-Another method I found useful when trying to trouble shoot single functions that
-were broken, especially if I suspected a missing parentheses or a brace/bracket
+Another method I found useful when trying to troubleshoot single functions that
+were broken, especially if I suspected a missing parenthesis or a brace/bracket
 was to simply retype the entire function and let the auto braces make sure everything
 was where it needed to be. This managed to fix several broken chunks of code.
 
@@ -56,7 +59,7 @@ Unsolved Problems.
   My page isn't as responsive as I'd like it to be. It looks good at all the
 default screen sizes, but looks strange in some of the transition zones. It has
 something to do with how bootstrap handles padding with my divs but I haven't had
-time to trouble shoot it fully yet. My web page is also pretty ugly. I didn't
+time to troubleshoot it fully yet. My web page is also pretty ugly. I didn't
 have time to stylize it and so in the future I plan on making the whole thing look
 more pretty. I would also like to add the ability for multiple users on a game,
 and users playing over the internet.
