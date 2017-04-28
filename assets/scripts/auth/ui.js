@@ -43,6 +43,7 @@ const changePasswordSuccess = (data) => {
   setTimeout(function () {
     $('div.text-box').text('')
   }, 3000)
+  document.getElementById('change-password').reset()
 }
 
 const changePasswordFailure = () => {
