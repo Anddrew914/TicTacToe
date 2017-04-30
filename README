@@ -3,8 +3,11 @@ TicTacToe By Andrew Easterling
 Link to game:
   https://anddrew914.github.io/TicTacToe/
 
-  Link to repo:
-    https://github.com/Anddrew914/TicTacToe
+Link to repo:
+  https://github.com/Anddrew914/TicTacToe
+
+Link to Wireframes and User Stories.
+  http://imgur.com/a/WXDHt
 
 List of technologies used:
     Front-end: HTML, CSS, SCSS JavaScript, jQuery, Bootstrap
@@ -63,6 +66,3 @@ time to troubleshoot it fully yet. My web page is also pretty ugly. I didn't
 have time to stylize it and so in the future I plan on making the whole thing look
 more pretty. I would also like to add the ability for multiple users on a game,
 and users playing over the internet.
-
-Link to Wireframes and User Stories.
-  http://imgur.com/a/WXDHt
