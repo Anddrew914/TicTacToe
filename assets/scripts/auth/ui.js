@@ -28,7 +28,6 @@ const signInSuccess = (data) => {
   $('.signIn').hide()
   $('#change-password').show()
   document.getElementById('sign-in').reset()
-
 }
 
 const signInFailure = (data) => {
